@@ -16,4 +16,4 @@ router.delete('/', usuariosDelete);
 router.patch('/', usuariosPatch );
 
 
-module.exports = router;usuariosDelete
+module.exports = router;
