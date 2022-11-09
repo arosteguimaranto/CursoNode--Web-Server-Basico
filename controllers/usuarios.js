@@ -11,9 +11,13 @@ const usuariosGet = (req, res = response) =>{
 
 const usuariosPost = (req, res = response) =>{
     
+    const {nombre, edad} = req.body;
+
     res.json({
     
-        msg: 'POST API controlador'
+        msg: 'POST API usuariosPost',
+        nombre, 
+        edad
     });
 }
 
