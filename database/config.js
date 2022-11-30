@@ -5,11 +5,11 @@ const dbConnection = async() =>{
     try{
 
         await mongoose.connect( process.env.MONGODB_ATLAS, {
-            /* useNewUrlParser: true,
+            /*  useNewUrlParser: true,
             useUnifiedTopology: true,
             useCreateIndex: true,
-            useFindAndModify: false */
-        });
+            useFindAndModify: false  */
+        }); 
 
         console.log('Base de datos online');
 
