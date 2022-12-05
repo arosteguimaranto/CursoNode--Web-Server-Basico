@@ -31,9 +31,10 @@ const usuariosGet = async (req = request, res = response) => {
 
 const usuariosPost = async (req, res = response) => {
 
-//console.log(req)
+    //console.log(req)
 
-    const { nombre, correo, password, rol } = req.body;
+    const {nombre , correo, password, rol } = req.body;
+   
     const usuario = new Usuario({ nombre, correo, password, rol });
 
     //Encriptra la contrase;a
@@ -80,13 +81,16 @@ const usuariosPatch = (req, res = response) => {
 
 const usuariosDelete = async (req, res = response) => {
 
-    const { id} = req.params;
-    
+    const { id } = req.params;
 
     //Fisicamente lo borramos
     //const usuario = await Usuario.findByIdAndDelete(id);
+   
+    const usuario = await Usuario.findByIdAndUpdate(id, { estado: false });
 
-    const usuario = await Usuario.findByIdAndUpdate(id, {estado: false} );
+
+
+
     res.json(usuario);
 }
 
